@@ -3,10 +3,6 @@ from PortfolioProject..Covid_deaths
 where continent is not null
 order by 3,4
 
---select *
---from `articulate-ego-345816.PortfolioProject.Covid_vaccinations`
---order by 3,4
---Select data that we are using
 select
 location, date, total_cases, new_cases, total_deaths, population
 from PortfolioProject..Covid_deaths
@@ -25,8 +21,8 @@ from PortfolioProject..Covid_deaths
 where location like '%States%'
 order by 1, 2
 
---Looking at counties with highest infection rate compared to population
---Shows percentage ofpipulaiton that got Covid
+--Looking at countries with highest infection rate compared to population
+--Shows percentage of population that got Covid
 select location, population, max(total_cases) as Highest_infection_count, max((total_cases/population))*100 as
 PercentPopulationInfected
 from PortfolioProject..Covid_deaths
